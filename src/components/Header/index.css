@@ -1,0 +1,80 @@
+.headerContainer {
+  height: 10vh;
+  width: 100%;
+  background-color: #202020;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.headerWebsiteLogo {
+  height: 60%;
+  cursor: pointer;
+}
+
+.inconsContainerForSmallDevices {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.headerIcons {
+  color: #ffffff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .homeAndJobsContainer {
+    display: none;
+  }
+  .logoutButton {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .inconsContainerForSmallDevices {
+    display: none;
+  }
+  .homeAndJobsContainer {
+    list-style-type: none;
+    padding-left: 0px;
+    width: 18%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .logoutButton {
+    height: 30px;
+    width: 90px;
+    background-color: #6366f1;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-size: 13px;
+    font-family: Roboto;
+    cursor: pointer;
+  }
+}
+
+.linkContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.HomeLink {
+  text-decoration: none;
+  color: #ffffff;
+}
