@@ -20,7 +20,7 @@ const Header = props => {
           className="headerWebsiteLogo"
         />
       </Link>
-      <div className="inconsContainerForSmallDevices">
+      <div className="iconsContainerForSmallDevices">
         <Link to="/">
           <AiFillHome className="headerIcons" />
         </Link>

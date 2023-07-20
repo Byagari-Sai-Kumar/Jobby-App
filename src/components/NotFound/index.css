@@ -1,0 +1,23 @@
+.notFoundBgContainer {
+  background-color: #000000;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  color: #ffffff;
+}
+
+.notFoundImage {
+  width: 30%;
+}
+
+.notFoundHeading {
+  font-size: 20px;
+}
+
+.notFoundPara {
+  font-size: 16px;
+}
