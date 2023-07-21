@@ -6,8 +6,9 @@ import './index.css'
 class Login extends Component {
   state = {userName: '', password: '', errorMsg: ''}
 
-  onSuccessSubmit = () => {
+  onSuccessSubmit = jwtToken => {
     const {history} = this.props
+    Cookies.set('jwt_token', jwtToken, {expires: 20, path: '/'})
     history.replace('/')
   }
 
@@ -30,9 +31,8 @@ class Login extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok) {
-      Cookies.set('jwtToken', data.jwt_token, {expires: 20})
       this.setState({errorMsg: ''})
-      this.onSuccessSubmit()
+      this.onSuccessSubmit(data.jwt_token)
     } else if (data.status_code === 400) {
       this.setState({errorMsg: data.error_msg})
     }
@@ -47,7 +47,7 @@ class Login extends Component {
   }
 
   render() {
-    const jwtToken = Cookies.get('jwtToken')
+    const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
@@ -74,7 +74,7 @@ class Login extends Component {
               onChange={this.updateUserName}
               value={userName}
             />
-            <label htmlFor="usernameInput" className="labelItem">
+            <label htmlFor="passwordInput" className="labelItem">
               PASSWORD
             </label>
             <input

@@ -17,31 +17,6 @@ class Profile extends Component {
     this.getProfileData()
   }
 
-  renderProfileLoading = () => (
-    <div className="loader-container" data-testid="loader">
-      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
-    </div>
-  )
-
-  renderProfileSuccess = () => {
-    const {profileData} = this.state
-    const {name, profileImageUrl, shortBio} = profileData
-
-    return (
-      <div className="profileSuccessContainer">
-        <img src={profileImageUrl} alt="profile" className="profileImage" />
-        <h1 className="profileName">{name}</h1>
-        <p className="shortBio">{shortBio}</p>
-      </div>
-    )
-  }
-
-  renderProfileFailure = () => (
-    <button type="button" className="retryButton" onClick={this.getProfileData}>
-      Retry
-    </button>
-  )
-
   getProfileData = async () => {
     this.setState({profileStatus: apiStatusConstants.inProgress})
 
@@ -71,6 +46,31 @@ class Profile extends Component {
       this.setState({profileStatus: apiStatusConstants.failure})
     }
   }
+
+  renderProfileLoading = () => (
+    <div className="loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+    </div>
+  )
+
+  renderProfileSuccess = () => {
+    const {profileData} = this.state
+    const {name, profileImageUrl, shortBio} = profileData
+
+    return (
+      <div className="profileSuccessContainer">
+        <img src={profileImageUrl} alt="profile" className="profileImage" />
+        <h1 className="profileName">{name}</h1>
+        <p className="shortBio">{shortBio}</p>
+      </div>
+    )
+  }
+
+  renderProfileFailure = () => (
+    <button type="button" className="retryButton" onClick={this.getProfileData}>
+      Retry
+    </button>
+  )
 
   renderProfileViews = () => {
     const {profileStatus} = this.state

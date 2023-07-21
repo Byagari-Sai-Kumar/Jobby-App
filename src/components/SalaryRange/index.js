@@ -17,7 +17,7 @@ const SalaryRange = props => {
         className="checkBox"
         onClick={onClickSalaryRange}
       />
-      {label}
+      <label htmlFor={salaryRangeId}>{label}</label>
     </li>
   )
 }

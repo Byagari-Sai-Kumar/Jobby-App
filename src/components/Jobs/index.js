@@ -73,7 +73,7 @@ class Jobs extends Component {
 
     this.setState({jobStatus: jobsApiStatusConstants.inProgress})
 
-    const jwtToken = Cookies.get('jwtToken')
+    const jwtToken = Cookies.get('jwt_token')
 
     const url = `https://apis.ccbp.in/jobs?employment_type=${joinEmploymentType}&minimum_package=${minimumPackage}&search=${search}`
     const options = {
@@ -181,7 +181,7 @@ class Jobs extends Component {
           alt="no jobs"
           className="noJobsImage"
         />
-        <p className="noJobsHeading">No Jobs Found</p>
+        <h1 className="noJobsHeading">No Jobs Found</h1>
         <p className="noJobsPara">
           We could not find any jobs. Try other filters
         </p>
@@ -202,14 +202,14 @@ class Jobs extends Component {
         alt="failure view"
         className="failureViewImage"
       />
-      <p className="failureHeading">Oops! Something Went Wrong</p>
+      <h1 className="failureHeading">Oops! Something Went Wrong</h1>
       <p className="failurePara">
         We cannot seem to find the page you are looking for.
       </p>
       <button
         type="button"
         className="failureRetryButton"
-        onClick={this.getJobData()}
+        onClick={this.getJobData}
       >
         Retry
       </button>

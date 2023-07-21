@@ -30,7 +30,7 @@ const SimilarJobCard = props => {
           </div>
         </div>
       </div>
-      <p className="descriptionHeading">Description</p>
+      <h1 className="descriptionHeading">Description</h1>
       <p className="description">{similarJobDescription}</p>
       <div className="overallLocationPackageContainer">
         <div className="locationSection">

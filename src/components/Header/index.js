@@ -7,7 +7,7 @@ import './index.css'
 
 const Header = props => {
   const onClickLogoutButton = () => {
-    Cookies.remove('jwtToken')
+    Cookies.remove('jwt_token')
     const {history} = props
     history.replace('/login')
   }
@@ -20,15 +20,21 @@ const Header = props => {
           className="headerWebsiteLogo"
         />
       </Link>
-      <div className="iconsContainerForSmallDevices">
+      <ul className="iconsContainerForSmallDevices">
         <Link to="/">
-          <AiFillHome className="headerIcons" />
+          <li>
+            <AiFillHome className="headerIcons" />
+          </li>
         </Link>
         <Link to="/jobs">
-          <HiMail className="headerIcons" />
+          <li>
+            <HiMail className="headerIcons" />
+          </li>
         </Link>
-        <FiLogOut className="headerIcons" onClick={onClickLogoutButton} />
-      </div>
+        <li>
+          <FiLogOut className="headerIcons" onClick={onClickLogoutButton} />
+        </li>
+      </ul>
       <ul className="homeAndJobsContainer">
         <Link to="/" className="HomeLink">
           <li>Home</li>

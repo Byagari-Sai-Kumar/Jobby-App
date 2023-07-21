@@ -16,7 +16,7 @@ const EmploymentFilter = props => {
         id={employmentTypeId}
         onClick={onClickEmploymentFilter}
       />
-      {label}
+      <label htmlFor={employmentTypeId}>{label}</label>
     </li>
   )
 }

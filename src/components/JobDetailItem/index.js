@@ -34,7 +34,7 @@ class JobDetailItem extends Component {
     const {params} = match
     const {id} = params
 
-    const jwtToken = Cookies.get('jwtToken')
+    const jwtToken = Cookies.get('jwt_token')
     const url = `https://apis.ccbp.in/jobs/${id}`
     const options = {
       method: 'GET',
@@ -120,7 +120,7 @@ class JobDetailItem extends Component {
           </div>
           <hr className="hrLine" />
           <div className="descriptionAndVisitLinkContainer">
-            <p className="descriptionHeading">Description</p>
+            <h1 className="descriptionHeading">Description</h1>
             <a href={jobDetailsData.companyWebsiteUrl} className="visit">
               <button className="visitLinkContainer" type="button">
                 Visit
@@ -129,7 +129,7 @@ class JobDetailItem extends Component {
             </a>
           </div>
           <p className="description3">{jobDetailsData.jobDescription}</p>
-          <p className="descriptionHeading2">Skills</p>
+          <h1 className="descriptionHeading2">Skills</h1>
           <ul className="skillsOverallContainer">
             {skillsData.map(eachSkill => (
               <li className="skillsListContainer" key={eachSkill.skillName}>
@@ -142,7 +142,7 @@ class JobDetailItem extends Component {
               </li>
             ))}
           </ul>
-          <p className="descriptionHeading2">Life at Company</p>
+          <h1 className="descriptionHeading2">Life at Company</h1>
           <div className="lifeAtCompanyOverallContainer">
             <div className="descriptionContainer">
               <p className="description">{jobDetailsData.jobLifeDescription}</p>
@@ -176,14 +176,14 @@ class JobDetailItem extends Component {
         alt="failure view"
         className="failureViewImage"
       />
-      <p className="failureHeading">Oops! Something Went Wrong</p>
+      <h1 className="failureHeading">Oops! Something Went Wrong</h1>
       <p className="failurePara">
         We cannot seem to find the page you are looking for.
       </p>
       <button
         type="button"
         className="failureRetryButton"
-        onClick={this.getJobDetailsData()}
+        onClick={this.getJobDetailsData}
       >
         Retry
       </button>

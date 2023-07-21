@@ -30,6 +30,11 @@
   margin-left: 10px;
 }
 
+.findJobsButtonLink {
+  text-decoration: none;
+  align-self: flex-start;
+}
+
 .findJobsButton {
   align-self: flex-start;
   background-color: #6366f1;
